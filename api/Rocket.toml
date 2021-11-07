@@ -3,7 +3,7 @@ address = "0.0.0.0"
 port = 8000
 
 [global.databases]
-rocketdb = { url = "postgres://userdb:agoodpassword@rocket_db/rocketdb" }
+rocketdb = { url = "postgres://auto_replace_user:auto_replace@auto_replace@_db/auto_replacedb" }
 
 [development]
 address = "localhost"
