@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+    api:
+        restart: on-failure
+        build: ./api
+        container_name: rocket_api
+        ports:
+            - 8000:8000
+        volumes:
+            - ./api:/usr/src/app
+        links:
+            - database
+        command: "cargo run"
+    database:
+        image: postgres:11
+        container_name: rocket_db
+        hostname: rocket_db
+        expose:
+            - 5432
+        volumes:
+            - pgdata:/var/lib/postgresql/data/pgdata
+        environment:
+            POSTGRES_PASSWORD: temp_pass
+            POSTGRES_USER: metrics_user
+            POSTGRES_DB: metrics
+            PGDATA: /var/lib/postgresql/data/pgdata
+
+volumes:
+    pgdata: {}
