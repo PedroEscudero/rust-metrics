@@ -11,5 +11,5 @@ WIP
 5. REST
 
 ## TODO
-1. Grafana
+1. Grafana 
 2. Calls to external services
